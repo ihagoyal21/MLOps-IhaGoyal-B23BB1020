@@ -3,18 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DL-Ops Assignment 1 | [Your Name]</title>
+    <title>DL-Ops Assignment 1 | Iha Goyal</title>
     <style>
-        :root { --primary: #2c3e50; --accent: #3498db; --bg: #f8f9fa; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 40px 20px; background: var(--bg); }
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 30px; border-top: 5px solid var(--primary); }
-        h1 { color: var(--primary); margin-top: 0; font-size: 2rem; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; padding: 15px; background: #f1f3f5; border-radius: 8px; }
-        .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 6px rgba(52,152,219,0.2); }
-        .btn:hover { background: #2980b9; transform: translateY(-2px); }
-        .best-model-badge { background: #e7f5ff; border-left: 5px solid var(--accent); padding: 20px; margin-top: 20px; border-radius: 0 8px 8px 0; }
+        /* Dark Bluish Palette */
+        :root { 
+            --primary-bg: #0b0e14;    /* Deep Black-Blue */
+            --card-bg: #161b22;       /* Slate Dark Gray-Blue */
+            --accent-blue: #58a6ff;   /* Bright GitHub Blue */
+            --text-main: #adbac7;     /* Soft Gray Text */
+            --text-header: #ffffff;   /* Pure White */
+            --info-bg: #1c2128;       /* Subtle Highlight Blue */
+            --border-color: #30363d;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background: var(--primary-bg); 
+        }
+
+        .card { 
+            background: var(--card-bg); 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5); 
+            margin-bottom: 30px; 
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        h1, h2, h3 { 
+            color: var(--text-header); 
+            margin-top: 0; 
+        }
+
+        h1 { font-size: 2.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+
+        .info-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; 
+            margin: 20px 0; 
+            padding: 15px; 
+            background: var(--info-bg); 
+            border-radius: 8px; 
+            border: 1px solid var(--border-color);
+        }
+
+        strong { color: var(--accent-blue); }
+
+        .btn { 
+            display: inline-block; 
+            background: var(--accent-blue); 
+            color: #0d1117; /* Dark text on bright button */
+            padding: 12px 28px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2); 
+        }
+
+        .btn:hover { 
+            background: #79c0ff; 
+            transform: translateY(-2px); 
+        }
+
+        .best-model-badge { 
+            background: rgba(88, 166, 255, 0.1); 
+            border-left: 5px solid var(--accent-blue); 
+            padding: 20px; 
+            margin-top: 20px; 
+            border-radius: 0 8px 8px 0; 
+        }
+
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
+        code { background: #2d333b; padding: 2px 6px; border-radius: 4px; color: #e6edf3; }
     </style>
 </head>
 <body>
@@ -44,9 +113,9 @@
     <div class="card">
         <h2>Key Learnings</h2>
         <ul>
-            <li><strong>Hyperparameter Impact:</strong> I observed that Adam provides significantly more stable convergence than SGD, especially at lower learning rates where SGD accuracy dropped below the 80% threshold.</li>
+            <li><strong>Hyperparameter Impact:</strong> Observed that Adam provides significantly more stable convergence than SGD, especially at lower learning rates where SGD accuracy dropped below the 80% threshold.</li>
             <li><strong>Hardware Optimization:</strong> Implementing <code>USE_AMP=True</code> and <code>pin_memory=True</code> demonstrated how to minimize training latency on GPU resources.</li>
-            <li><strong>Architecture Choice:</strong> For 28x28 grayscale images, I learned that a deeper model like ResNet-50 is often "overkill" and can lead to slower training without accuracy gains.</li>
+            <li><strong>Architecture Choice:</strong> For 28x28 grayscale images, learned that a deeper model like ResNet-50 is often "overkill" and can lead to slower training without significant accuracy gains.</li>
         </ul>
     </div>
 
