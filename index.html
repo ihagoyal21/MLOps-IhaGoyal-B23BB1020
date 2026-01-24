@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL-Ops Assignment 1 | [Your Name]</title>
+    <style>
+        :root { --primary: #2c3e50; --accent: #3498db; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 40px 20px; background: var(--bg); }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 30px; border-top: 5px solid var(--primary); }
+        h1 { color: var(--primary); margin-top: 0; font-size: 2rem; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; padding: 15px; background: #f1f3f5; border-radius: 8px; }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 6px rgba(52,152,219,0.2); }
+        .btn:hover { background: #2980b9; transform: translateY(-2px); }
+        .best-model-badge { background: #e7f5ff; border-left: 5px solid var(--accent); padding: 20px; margin-top: 20px; border-radius: 0 8px 8px 0; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>DL-Ops Lab: Assignment 1</h1>
+        <div class="info-grid">
+            <div><strong>Name:</strong> Iha Goyal </div>
+            <div><strong>Roll No:</strong> B23BB1020 </div>
+            <div><strong>Email:</strong> b23bb1020@iitj.ac.in </div>
+        </div>
+
+        <h3>Project Report</h3>
+        <p>Experimental results for ResNet-18, ResNet-50, and SVM classifiers are detailed in the live report below:</p>
+        <a href="https://docs.google.com/document/d/14Nj7rGxEB9kaUkJrwtRCGuHTzx-zULvbAMZRBl6e298/edit?usp=sharing" class="btn" target="_blank">View Live Report (Google Docs)</a>
+    </div>
+
+    <div class="card">
+        <h2>Best Model Analysis</h2>
+        <div class="best-model-badge">
+            <p>The <strong>Best Model</strong> identified during training was <strong>ResNet-18</strong> using the <strong>Adam Optimizer (LR: 0.001)</strong>.</p>
+            <p>By optimizing training with <strong>5 Epochs</strong> and <strong>Memory Pinning</strong>, the model achieved a peak Test Accuracy of <strong>99.21%</strong> on the MNIST dataset.</p>
+        </div>
+        <p>This configuration outperformed ResNet-50 in both convergence speed and computational efficiency, making it the most effective choice for the MNIST classification task.</p>
+    </div>
+
+    <div class="card">
+        <h2>Key Learnings</h2>
+        <ul>
+            <li><strong>Hyperparameter Impact:</strong> I observed that Adam provides significantly more stable convergence than SGD, especially at lower learning rates where SGD accuracy dropped below the 80% threshold.</li>
+            <li><strong>Hardware Optimization:</strong> Implementing <code>USE_AMP=True</code> and <code>pin_memory=True</code> demonstrated how to minimize training latency on GPU resources.</li>
+            <li><strong>Architecture Choice:</strong> For 28x28 grayscale images, I learned that a deeper model like ResNet-50 is often "overkill" and can lead to slower training without accuracy gains.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
