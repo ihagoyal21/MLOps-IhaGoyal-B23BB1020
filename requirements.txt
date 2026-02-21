@@ -1,0 +1,7 @@
+transformers==4.49.0
+datasets
+torch
+scikit-learn
+pandas
+wget
+accelerate>=0.26.0

@@ -1,0 +1,14 @@
+FROM python:3.9-slim
+WORKDIR /app
+
+# Install git, wget, and unzip (necessary for the pipeline)
+RUN apt-get update && apt-get install -y git wget unzip && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the source code into the image
+COPY src/ ./src/
+
+# IMPORTANT: Replace 'your-username' with your actual Hugging Face username
+CMD ["python", "src/eval.py", "--model", "ihagoyal21/my-exam-model"]

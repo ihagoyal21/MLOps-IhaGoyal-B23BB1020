@@ -1,0 +1,6 @@
+Source: ./local_model
+Results: {'eval_loss': 0.27669557929039, 'eval_model_preparation_time': 0.0024, 'eval_runtime': 68.0126, 'eval_samples_per_second': 12.586, 'eval_steps_per_second': 0.794}
+----------------------------------------
+Source: ihagoyal21/my-exam-model
+Results: {'eval_loss': 0.29302817583084106, 'eval_model_preparation_time': 0.0026, 'eval_runtime': 59.5011, 'eval_samples_per_second': 14.386, 'eval_steps_per_second': 0.908}
+----------------------------------------
