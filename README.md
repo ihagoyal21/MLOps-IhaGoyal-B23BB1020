@@ -9,16 +9,18 @@ The trained model weights and tokenizer artifacts are hosted on the Hugging Face
 **Link:** [https://huggingface.co/ihagoyal21/my-exam-model](https://huggingface.co/ihagoyal21/my-exam-model)
 
 ## Evaluation Results (Task 9)
-The following results were obtained by running the production-ready Docker container (\`Dockerfile.prod\`), which pulls the model directly from the registry:
 
-***** eval metrics *****
+I verified the model performance using both the local artifacts and the remote Hugging Face Registry to ensure consistency.
 
-epoch                   = 3.0
-eval_accuracy           = 0.8178
-eval_loss               = 0.4925
-eval_runtime            = 10.4521
-eval_samples_per_second = 102.04
-eval_steps_per_second   = 12.82
+### Local Model Results:
+- Eval Loss: 0.2767
+- Throughput: 12.58 samples/sec
+
+### Hugging Face Registry Results:
+- Eval Loss: 0.2930
+- Throughput: 14.38 samples/sec
+
+Conclusion: The model pulled from the registry maintains the performance observed during the local development phase, verifying a successful deployment pipeline.
   
 ## How to Run Production Evaluation
 To reproduce these results, run:
