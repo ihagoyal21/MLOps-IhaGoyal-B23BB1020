@@ -1,206 +1,90 @@
+
+# DLOps Assignment 5: LoRA & Adversarial Attacks (IBM ART)
+
+**Author:** Iha Goyal  
+**Roll Number:** B23BB1020  
+
+## 🔗 Important Links
+* **GitHub Branch (Assignment 5):** https://github.com/ihagoyal21/MLOps-IhaGoyal-B23BB1020.git
+
+* **Hugging Face Model (Q1 Best LoRA Weights):** https://huggingface.co/ihagoyal21/B23BB1020-Ass5-Q1-LoRA/tree/main
+
+* **WandB Dashboard (Q1 - ViT LoRA):** https://wandb.ai/ihagoyal-mun-indian-instit/DLOps_Ass5_Q1?nw=nwuserihagoyalmun
+
+* **WandB Dashboard (Q2 - Adversarial Attacks):** https://wandb.ai/ihagoyal-mun-indian-instit/DLOps_Ass5_Q2?nw=nwuserihagoyalmun
+
+
 ---
-base_model: WinKawaks/vit-small-patch16-224
-library_name: peft
-tags:
-- base_model:adapter:WinKawaks/vit-small-patch16-224
-- lora
-- transformers
+
+## ⚙️ Installation & Setup
+To run the experiments, ensure you have a Python environment set up (preferably within a Docker container as per assignment guidelines) and install the required dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+*Note: The `requirements.txt` includes `torch`, `torchvision`, `transformers`, `peft==0.18.1`, `optuna`, and `wandb`.*
+
 ---
 
-# Model Card for Model ID
-
-<!-- Provide a quick summary of what the model is/does. -->
-
-
-
-## Model Details
-
-### Model Description
-
-<!-- Provide a longer summary of what this model is. -->
-
-
-
-- **Developed by:** [More Information Needed]
-- **Funded by [optional]:** [More Information Needed]
-- **Shared by [optional]:** [More Information Needed]
-- **Model type:** [More Information Needed]
-- **Language(s) (NLP):** [More Information Needed]
-- **License:** [More Information Needed]
-- **Finetuned from model [optional]:** [More Information Needed]
-
-### Model Sources [optional]
-
-<!-- Provide the basic links for the model. -->
-
-- **Repository:** [More Information Needed]
-- **Paper [optional]:** [More Information Needed]
-- **Demo [optional]:** [More Information Needed]
-
-## Uses
-
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
-
-### Direct Use
-
-<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
-
-[More Information Needed]
-
-### Downstream Use [optional]
-
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-[More Information Needed]
-
-### Out-of-Scope Use
-
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
-
-[More Information Needed]
-
-## Bias, Risks, and Limitations
-
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-[More Information Needed]
-
-### Recommendations
-
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
-
-Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
-
-## How to Get Started with the Model
-
-Use the code below to get started with the model.
-
-[More Information Needed]
-
-## Training Details
-
-### Training Data
-
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
-
-[More Information Needed]
-
-### Training Procedure
-
-<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
-
-#### Preprocessing [optional]
-
-[More Information Needed]
-
-
-#### Training Hyperparameters
-
-- **Training regime:** [More Information Needed] <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
-
-#### Speeds, Sizes, Times [optional]
-
-<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
-
-[More Information Needed]
-
-## Evaluation
-
-<!-- This section describes the evaluation protocols and provides the results. -->
-
-### Testing Data, Factors & Metrics
-
-#### Testing Data
-
-<!-- This should link to a Dataset Card if possible. -->
-
-[More Information Needed]
-
-#### Factors
-
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
-
-[More Information Needed]
-
-#### Metrics
-
-<!-- These are the evaluation metrics being used, ideally with a description of why. -->
-
-[More Information Needed]
-
-### Results
-
-[More Information Needed]
-
-#### Summary
-
-
-
-## Model Examination [optional]
-
-<!-- Relevant interpretability work for the model goes here -->
-
-[More Information Needed]
-
-## Environmental Impact
-
-<!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
-
-Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
-
-- **Hardware Type:** [More Information Needed]
-- **Hours used:** [More Information Needed]
-- **Cloud Provider:** [More Information Needed]
-- **Compute Region:** [More Information Needed]
-- **Carbon Emitted:** [More Information Needed]
-
-## Technical Specifications [optional]
-
-### Model Architecture and Objective
-
-[More Information Needed]
-
-### Compute Infrastructure
-
-[More Information Needed]
-
-#### Hardware
-
-[More Information Needed]
-
-#### Software
-
-[More Information Needed]
-
-## Citation [optional]
-
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
-
-**BibTeX:**
-
-[More Information Needed]
-
-**APA:**
-
-[More Information Needed]
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-[More Information Needed]
-
-## More Information [optional]
-
-[More Information Needed]
-
-## Model Card Authors [optional]
-
-[More Information Needed]
-
-## Model Card Contact
-
-[More Information Needed]
-### Framework versions
-
-- PEFT 0.18.1
+## 🚀 How to Run the Code
+
+### Q1: ViT-Small Finetuning (CIFAR-100)
+1. **Run the Baseline Model (No LoRA):**
+   ```bash
+   python q1_baseline.py
+   ```
+2. **Run the LoRA Finetuning (Optuna Grid Search & Best Config):**
+   ```bash
+   python q1_lora.py
+   ```
+
+### Q2: Adversarial Attacks & Detectors (CIFAR-10)
+1. **Run FGSM Attack (Scratch vs. IBM ART):**
+   ```bash
+   python q2_part1_fgsm.py
+   ```
+2. **Run Adversarial Detectors (PGD & BIM):**
+   ```bash
+   python q2_part2_detectors.py
+   ```
+*(Note: Qualitative image samples of clean vs. adversarial images across FGSM, PGD, and BIM attacks can be viewed directly on the Q2 WandB Dashboard linked above).*
+
+---
+
+## 📊 Q1 Results & Tables
+
+### Step 3: Best LoRA Configuration Training Progression
+**Hyperparameters:** Rank = 8, Alpha = 8, Dropout = 0.1  
+*Target Modules: Query, Key, Value*
+
+| Epoch | Training Loss | Validation Loss | Training Accuracy | Validation Accuracy |
+| :---: | :---: | :---: | :---: | :---: |
+| 1 | 55.123 | 36.576 | 85.07% | 88.81% |
+| 2 | 25.673 | 36.811 | 92.16% | **88.89%** |
+| 3 | 17.818 | 40.62 | 94.57% | 88.66% |
+| 4 | 13.410 | 43.017 | 96.24% | 88.53% |
+| 5 | 10.820 | 46.431 | 96.76% | 88.50% |
+| 6 | 9.723 | 51.187 | 97.47% | 88.08% |
+| 7 | 8.307 | 51.261 | 97.47% | 88.05% |
+| 8 | 8.236 | 52.938 | 97.78% | 88.44% |
+| 9 | 7.253 | 56.437 | 98.00% | 87.67% |
+| 10 | 6.823 | 60.436 | 98.10% | 88.08% |
+
+*(Note: Exact loss values are logged and available on the WandB dashboard).*
+
+### Step 4: Testing Summary Table
+Comparison of the baseline ViT-Small model versus the best LoRA configuration injected into the Q, K, and V projection matrices.
+
+| LORA layers (with/without) | Rank | Alpha | Dropout | Overall Test Accuracy | Trainable Parameters used |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Without (Baseline)** | N/A | N/A | N/A | **83.00%** | **38,500** |
+| **With (Q, K, V)** | 8 | 8 | 0.1 | **88.89%** | **259,684** |
+
+---
+
+## 🛠️ Technical Specifications
+* **Base Model:** `WinKawaks/vit-small-patch16-224`
+* **Frameworks:** PyTorch, Transformers, PEFT (v0.18.1), Optuna, Weights & Biases (WandB)
+* **Dataset:** CIFAR-100 (Q1) / CIFAR-10 (Q2)
+```
