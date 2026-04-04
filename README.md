@@ -5,13 +5,15 @@
 **Roll Number:** B23BB1020  
 
 ## 🔗 Important Links
-* **GitHub Branch (Assignment 5):** https://github.com/ihagoyal21/MLOps-IhaGoyal-B23BB1020.git
+* **GitHub Branch (Assignment 5):** https://github.com/ihagoyal21/MLOps-IhaGoyal-B23BB1020/tree/Assignment-5
+
 
 * **Hugging Face Model (Q1 Best LoRA Weights):** https://huggingface.co/ihagoyal21/B23BB1020-Ass5-Q1-LoRA/tree/main
 
-* **WandB Dashboard (Q1 - ViT LoRA):** https://wandb.ai/ihagoyal-mun-indian-instit/DLOps_Ass5_Q1?nw=nwuserihagoyalmun
+* **WandB Dashboard (Q1 - ViT LoRA):** https://wandb.ai/ihagoyal-mun-indian-instit/DLOps_Ass5_Q1/workspace?nw=nwuserihagoyalmun
 
-* **WandB Dashboard (Q2 - Adversarial Attacks):** https://wandb.ai/ihagoyal-mun-indian-instit/DLOps_Ass5_Q2?nw=nwuserihagoyalmun
+
+* **WandB Dashboard (Q2 - Adversarial Attacks):** https://wandb.ai/ihagoyal-mun-indian-instit/DLOps_Ass5_Q2/table?nw=nwuserihagoyalmun
 
 
 ---
