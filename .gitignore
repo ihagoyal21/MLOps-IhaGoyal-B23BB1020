@@ -1,0 +1,19 @@
+# Dataset files
+*.tar.gz
+*.zip
+*.parquet
+__pycache__/
+*.pyc
+.cache/
+**/cache/
+**/data/
+**/*.bin
+**/*.pt
+**/*.pth
+nohup.out
+*.zip
+*.tar.gz
+**/data/
+**/MLDLOPs_2026_Major_Exam/data*
+Question2/MLDLOPs_2026_Major_Exam/data.zip
+Question2/MLDLOPs_2026_Major_Exam/

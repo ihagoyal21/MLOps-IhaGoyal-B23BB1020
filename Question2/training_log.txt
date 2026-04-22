@@ -1,0 +1,25 @@
+nohup: ignoring input
+Total images: 1060
+Using: cuda
+Epoch 1/20 | Loss:1.1748 | mIOU:0.1595 | mDice:0.1842
+Epoch 2/20 | Loss:0.4732 | mIOU:0.1901 | mDice:0.2300
+Epoch 3/20 | Loss:0.3412 | mIOU:0.2582 | mDice:0.3032
+Epoch 4/20 | Loss:0.2634 | mIOU:0.3139 | mDice:0.3654
+Epoch 5/20 | Loss:0.2250 | mIOU:0.2960 | mDice:0.3519
+Epoch 6/20 | Loss:0.1960 | mIOU:0.3456 | mDice:0.3952
+Epoch 7/20 | Loss:0.1664 | mIOU:0.3880 | mDice:0.4481
+Epoch 8/20 | Loss:0.1477 | mIOU:0.4271 | mDice:0.4846
+Epoch 9/20 | Loss:0.1328 | mIOU:0.4392 | mDice:0.4988
+Epoch 10/20 | Loss:0.1218 | mIOU:0.4342 | mDice:0.4966
+Epoch 11/20 | Loss:0.1211 | mIOU:0.4631 | mDice:0.5233
+Epoch 12/20 | Loss:0.1016 | mIOU:0.4858 | mDice:0.5481
+Epoch 13/20 | Loss:0.1445 | mIOU:0.4180 | mDice:0.4859
+Epoch 14/20 | Loss:0.1148 | mIOU:0.4610 | mDice:0.5296
+Epoch 15/20 | Loss:0.0986 | mIOU:0.5200 | mDice:0.5822
+Epoch 16/20 | Loss:0.0918 | mIOU:0.5330 | mDice:0.5946
+Epoch 17/20 | Loss:0.0845 | mIOU:0.5496 | mDice:0.6114
+Epoch 18/20 | Loss:0.0770 | mIOU:0.5387 | mDice:0.6017
+Epoch 19/20 | Loss:0.0750 | mIOU:0.5618 | mDice:0.6260
+Epoch 20/20 | Loss:0.0737 | mIOU:0.5755 | mDice:0.6407
+
+FINAL mIOU:0.5755 | mDice:0.6407
