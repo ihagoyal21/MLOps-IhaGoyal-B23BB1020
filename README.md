@@ -1,5 +1,5 @@
 # MLDLOPs Major Exam 2026 - Iha Goyal (B23BB1020)
-## Question2: bleu score : 38.09
+## Question1: bleu score : 38.09
 ## Question2: mIOU: 0.5755 and mDICE: 0.6407
 Question2: mIOU: 0.5755 and mDICE:0.6407 .
 ## Question4: ECAPA-TDNN Speaker Verification
